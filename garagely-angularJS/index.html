@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular Modal</title>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<script type="text/javascript" src="./js/angular.min.js"></script>
+	<script type="text/javascript" src="./js/ui-bootstrap-tpls.js"></script>
+	<script type="text/javascript" src="./js/angular-ui-router.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript" src="./js/app.js"></script>
+</head>
+
+<body ng-app="garagely">
+<nav class="navbar navbar-default pull-right">
+  <ul class="nav navbar-nav">
+  	<button ng-controller="ModalController" type="button" class="btn btn-default" ng-click="open('lg')">Form wala modal</button>
+    <li><a ui-sref="home">Home</a></li>
+    <li><a ui-sref="about">About</a></li>
+    <li><a ui-sref="blog">Blog</a></li>
+  </ul>
+</nav>
+<div>
+    <ui-view></ui-view>
+    <footer class="main-footer">
+                <div class="container-wide">
+                    <div class="main-footer-links">
+                        <div class="link-group">
+                            <h3>Help &amp; Support</h3>
+                            <ul>
+                                <li><a href="http://www.garagely.in/#workshere">How It Works</a></li>
+                                <li><a href="http://www.garagely.in/#whygarage">Why Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="link-group">
+                            <h3>Locations</h3>
+                            <ul>
+                                <li><a href="http://www.garagely.in/#">Delhi</a></li>
+                                <li><a href="http://www.garagely.in/#">Gurgaon</a></li>
+                                <li><a href="http://www.garagely.in/#">Ghaziabad</a></li>
+                                <li><a href="http://www.garagely.in/#">Noida</a></li>
+                                <li><a href="http://www.garagely.in/#">Faridabad</a></li>
+                            </ul>
+                        </div>
+                        <div class="link-group">
+                            <h3>Company</h3>
+                            <ul>
+                                <li><a href="http://www.garagely.in/aboutus.php#ourstoryhere">Our Story</a></li>
+                                <li><a href="http://garagely.in/blog/" target="_blank">News &amp; Blog</a></li>
+                                <!--li><a href="#">Careers</a></li>
+                                <li><a href="#">Terms & Privacy</a></li-->
+                            </ul>
+                        </div>
+                        <div class="link-group">
+                            <h3>Contact Us</h3>
+                            <ul>
+                                <li><a href="mailto:info@garagely.in">Info@garagely.in</a></li>
+                                <li><a href="tel:+918588959130">+91 8588959130</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="main-footer-bottom">
+                        <div class="clearfix">
+                            <div class="copyright">Copyright © 2015 Garagely</div>                        
+                            <ul class="social-icons">
+                                <li><a class="facebook" href="https://www.facebook.com/Garagly/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a class="twitter" href="https://twitter.com/garagelyin" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    </footer>
+</div>
+
+</body>
+</html>

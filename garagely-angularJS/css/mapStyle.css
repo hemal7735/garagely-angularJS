@@ -1,0 +1,49 @@
+@import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700|Open+Sans:400,800);
+.angular-google-map-container {
+		height: 400px;
+}
+body {
+	background-color: black;
+	margin: 0;
+	padding: 0;
+}
+.position {
+	text-align: center;
+	position: absolute;
+	z-index: 9999999;
+	top: 0;
+	left: 50%;
+	background-color: rgba(255,255,255,.6);
+	height: 40px;
+	width: 450px;
+	padding: 4px 10px 0;
+}
+
+input {
+	font-family: 'Inconsolata', monospace ;
+	font-size: 1.25em;
+	background-color: transparent;
+	border: 0;
+	width: 10em;
+	top: -5px;
+	position: relative;
+}
+
+input:nth-child(1) {
+	text-align: right;
+	left: 20px;
+}
+
+input, input:focus {
+	  outline: none;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.huge {
+	display: inline;
+	font-size: 48pt;
+	line-height: 10px;
+	position: relative;
+}
