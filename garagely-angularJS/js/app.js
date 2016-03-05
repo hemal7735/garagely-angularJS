@@ -52,12 +52,18 @@ app.controller('MapController', ['$scope', function ($scope) {
         $scope.latlng.lat = position.coords.latitude;
         $scope.latlng.lng = position.coords.longitude;
         $scope.accuracy = position.coords.accuracy;
-        $scope.$apply();
+        // $scope.$apply();
 
         //change current Center
         var latlng = new google.maps.LatLng($scope.latlng.lat, $scope.latlng.lng);
-        $scope.map.setCenter(latlng);
-        $scope.marker.position = latlng;
+        // $scope.map.setCenter(latlng);
+        // $scope.marker.position = latlng;
+         $scope.$apply(function () {
+        	$scope.map.setCenter(latlng);
+        	$scope.marker.position = latlng;
+        	$scope.marker.setMap($scope.map);
+        });
+      
     }
 
     $scope.showError = function (error) {
@@ -78,10 +84,7 @@ app.controller('MapController', ['$scope', function ($scope) {
         $scope.$apply();
     }
 
-    // get Current Location using Sensor
-    $scope.getCurrLocation();
-
-    var mapOptions = {
+  var mapOptions = {
       zoom: 15,
       center: new google.maps.LatLng($scope.latlng.lat, $scope.latlng.lng),
       mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -94,6 +97,9 @@ app.controller('MapController', ['$scope', function ($scope) {
         draggable: true
     });
 
+  // get Current Location using Sensor
+    $scope.getCurrLocation();
+  
     $scope.showResult = function () {
         return $scope.error == "";
     }
@@ -101,11 +107,13 @@ app.controller('MapController', ['$scope', function ($scope) {
     // To help Marker for dragging
     google.maps.event.addListener($scope.marker, 'dragend', function (evt) {
             // document.getElementById('current').innerHTML = '<p>Lat: ' + evt.latLng.lat().toFixed(3) + 'Lng: ' + evt.latLng.lng().toFixed(3) + '</p>';
-            document.getElementById('lat').innerHTML = evt.latLng.lat();
-            document.getElementById('lng').innerHTML = evt.latLng.lng();
+            // document.getElementById('lat').innerHTML = evt.latLng.lat();
+            // document.getElementById('lng').innerHTML = evt.latLng.lng();
             
-            $scope.latlng.lat = evt.latLng.lat();
-            $scope.latlng.lng = evt.latLng.lng();
+             $scope.$apply(function () {
+            	$scope.latlng.lat = evt.latLng.lat();
+            	$scope.latlng.lng = evt.latLng.lng();
+            });
 
             console.log($scope.latlng.lat+"\n"+$scope.latlng.lng);
 
